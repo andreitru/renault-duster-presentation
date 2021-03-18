@@ -1,0 +1,43 @@
+.header {
+  &__container {
+    position: relative;
+    padding-top: 209px;
+    padding-bottom: 54px;
+    max-width: 1198px;
+    background: url("../img/logo.png") no-repeat center 44px;
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 600;
+    font-size: 34px;
+    letter-spacing: 1.1px;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--color-black);
+  }
+
+  &__list {
+    position: absolute;
+    right: 3px;
+    top: 10px;
+  }
+}
+
+.languages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__link {
+    text-transform: uppercase;
+
+    &--active {
+      font-weight: 700;
+    }
+  }
+
+  &__link:first-child {
+    margin-right: 10px;
+  }
+}
