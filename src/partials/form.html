@@ -1,6 +1,10 @@
 <section class="form-section">
-  <div class="container form-section__container">
+  <div class="form-section__container container">
     <h2 class="form-section__title">Презентация нового Renault Duster 2021</h2>
+    <ul class="header__list languages">
+      <li class="languages__item"><span class="languages__link languages__link--active">рус |</span></li>
+      <li class="languages__item"><a href='#' class="languages__link">eng</a></li>
+    </ul>
     <form class="form">
       <label for="name" class="form__label">
         <input type="text" id="name" name="name" class="form__input" placeholder="ФИО" required>
@@ -8,10 +12,11 @@
       <label for="email" class="form__label">
         <input type="email" id="email" name="email" class="form__input" placeholder="E-mail" required>
       </label>
-      <label for="checkbox">
+      <div class="form__checkbox-container">
         <input type="checkbox" id="checkbox" class="form__checkbox" name="checkbox" required>
-        Даю согласие на обработку персональных данных
-      </label>
+        <label for="checkbox"></label>
+        <a href="#" class="form__agreement" target="_blank">Даю согласие на обработку персональных данных</a>
+      </div>
       <button type="submit" class="form__button btn-reset">Продолжить</button>
     </form>
   </div>
