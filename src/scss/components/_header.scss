@@ -1,17 +1,16 @@
 .header {
   &__container {
     position: relative;
-    padding-top: 209px;
-    padding-bottom: 54px;
-    max-width: 1198px;
-    background: url("../img/logo.png") no-repeat center 44px;
+    padding-top: 243px;
+    padding-bottom: 44px;
+    background: url("../img/logo.png") no-repeat center 78px;
   }
 
   &__title {
     margin: 0;
     font-weight: 600;
-    font-size: 34px;
-    letter-spacing: 1.1px;
+    font-size: 40px;
+    letter-spacing: 1px;
     text-align: center;
     text-transform: uppercase;
     color: var(--color-black);
@@ -19,8 +18,8 @@
 
   &__list {
     position: absolute;
-    right: 3px;
-    top: 10px;
+    right: 30px;
+    top: 45px;
   }
 }
 
@@ -30,6 +29,7 @@
   justify-content: center;
 
   &__link {
+    font-size: 26px;
     text-transform: uppercase;
 
     &--active {

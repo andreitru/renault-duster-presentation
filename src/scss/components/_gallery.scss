@@ -1,21 +1,20 @@
 .gallery {
-  background-image: url("../img/background.jpg");
-  background-position: bottom;
-  background-repeat: no-repeat;
   background-color: var(--color-orange);
 
   &__container {
-    position: relative;
     margin-top: -2px;
-    padding-top: 60px;
-    padding-bottom: 250px;
-    max-width: 1228px;
+    padding-top: 17px;
+    padding-bottom: 410px;
+    background-image: url("../img/background.jpg");
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
   &__title {
-    margin: 0 0 20px;
+    margin: 0 0 36px;
     font-weight: 600;
-    font-size: 36px;
+    font-size: 50px;
     letter-spacing: 1.1px;
     text-align: center;
     text-transform: uppercase;
@@ -24,40 +23,49 @@
 }
 
 .gallery-slider {
-  max-width: 1108px;
+  position: relative;
+  margin: 0 auto;
+  padding-right: 60px;
+  padding-left: 60px;
+  max-width: 1825px;
+
+  &__slider {
+    max-width: 1645px;
+  }
 
   &__prev {
     position: absolute;
     left: 0;
-    top: 39%;
-    width: 35px;
-    height: 35px;
+    top: 50%;
+    width: 55px;
+    height: 55px;
     background: url("../img/arrow.svg") no-repeat center;
+    transform: translateY(-50%);
     cursor: pointer;
   }
 
   &__next {
     position: absolute;
     right: 0;
-    top: 39%;
-    width: 35px;
-    height: 35px;
+    top: 50%;
+    width: 55px;
+    height: 55px;
     background: url("../img/arrow.svg") no-repeat center;
-    transform: rotate(180deg);
+    transform: translateY(-50%) rotate(180deg);
     cursor: pointer;
   }
 
   &__pagination {
     position: relative;
-    margin-top: 45px;
+    margin-top: 67px;
 
     .swiper-pagination-bullet {
-      width: 21px;
-      height: 21px;
+      width: 31px;
+      height: 31px;
     }
   }
 }
 
 .swiper-container-horizontal > .gallery-slider__pagination .swiper-pagination-bullet {
-  margin: 0 9.5px;
+  margin: 0 14px;
 }

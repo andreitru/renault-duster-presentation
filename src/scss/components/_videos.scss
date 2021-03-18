@@ -1,13 +1,12 @@
 .video {
   &__container {
-    padding-bottom: 77px;
-    max-width: 1198px;
+    padding-bottom: 53px;
   }
 
   &__main-video {
-    margin-bottom: 60px;
+    margin-bottom: 95px;
     width: 100%;
-    max-height: 622px;
+    max-height: 924px;
   }
 
   &__subvideo {
@@ -22,13 +21,13 @@
 }
 
 .subvideo {
-  max-height: 296px;
+  max-height: 440px;
 
   &__video {
     width: 45%;
 
     &:first-child {
-      margin-right: 56px;
+      margin-right: 5%;
     }
   }
 }

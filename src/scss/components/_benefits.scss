@@ -1,14 +1,16 @@
 .benefits {
-  background: linear-gradient(0.98deg, var(--color-orange) 71.89%, rgba(255, 255, 255, 0) 96.28%);
+  background: linear-gradient(0.98deg, var(--color-orange) 51%, rgba(255, 255, 255, 0) 90%);
 
   &__container {
-    max-width: 1198px;
+    padding-top: 28px;
+    padding-bottom: 50px;
   }
 
   &__title {
+    margin: 0;
     font-weight: 600;
-    font-size: 34px;
-    letter-spacing: 1.1px;
+    font-size: 40px;
+    letter-spacing: 1px;
     text-align: center;
     text-transform: uppercase;
     color: var(--color-black);
@@ -18,7 +20,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    margin-top: 97px;
+    margin: 54px auto 0;
   }
 
   &__slider {
@@ -28,30 +30,42 @@
 
 .slider {
   &__list {
-    margin-top: 40px;
+    margin-top: 27px;
     padding-left: 10px;
   }
 
   &__item {
-    margin-bottom: 28px;
-    padding: 5px 0 5px 45px;
+    margin-bottom: 55px;
+    padding: 5px 0 5px 66px;
     font-weight: 500;
-    font-size: 18px;
-    line-height: 21px;
-    letter-spacing: 1.1px;
+    font-size: 26px;
+    line-height: 32px;
+    letter-spacing: 1px;
     text-transform: uppercase;
     color: var(--color-white);
     background: url("../img/check.svg") no-repeat left top;
   }
+
+  &__pagination {
+    position: relative;
+    margin-top: 30px;
+
+    .swiper-pagination-bullet {
+      width: 20px;
+      height: 20px;
+    }
+  }
 }
 
-.swiper-pagination {
-  position: relative;
-  margin-top: 20px;
+.swiper-container-horizontal > .slider__pagination .swiper-pagination-bullet {
+  margin: 0 9.5px;
 }
 
 .swiper-button-next {
+  color: rgba(0, 0, 0, 0.4);
   opacity: 0;
+  transform: translateY(-50%);
+  transition: opacity 0.3s;
 }
 
 .swiper-button-next.swiper-button-disabled,
@@ -64,7 +78,10 @@
 }
 
 .swiper-button-prev {
+  color: rgba(0, 0, 0, 0.4);
   opacity: 0;
+  transform: translateY(-50%);
+  transition: opacity 0.3s;
 }
 
 .swiper-button-prev:hover {

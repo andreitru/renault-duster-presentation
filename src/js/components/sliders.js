@@ -10,7 +10,7 @@ var mySwiper1 = new Swiper(".swiper-container1", {
     disableOnInteraction: false
   },
   pagination: {
-    el: ".swiper-pagination",
+    el: ".slider__pagination",
     clickable: true,
   },
   navigation: {
@@ -33,7 +33,7 @@ var mySwiper2 = new Swiper(".swiper-container2", {
     disableOnInteraction: false
   },
   pagination: {
-    el: ".swiper-pagination",
+    el: ".slider__pagination",
     clickable: true,
   },
   navigation: {
@@ -56,7 +56,7 @@ var mySwiper3 = new Swiper(".swiper-container3", {
     disableOnInteraction: false
   },
   pagination: {
-    el: ".swiper-pagination",
+    el: ".slider__pagination",
     clickable: true,
   },
   navigation: {
@@ -74,10 +74,10 @@ var mySwiper4 = new Swiper(".swiper-container4", {
   spaceBetween: 10,
   centeredSlides: true,
   slideToClickedSlide: false,
-  // autoplay: {
-  //   delay: 3000,
-  //   disableOnInteraction: false
-  // },
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false
+  },
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
