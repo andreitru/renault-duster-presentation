@@ -22,22 +22,22 @@ videojs('main_video', {
   player.updateSrc([
     {
       // src: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
-      src: '../video/main-video.mp4',
+      src: '../video/SD/main-video.m4v',
       type: 'video/mp4',
-      label: '4K',
-      res: '4K'
+      label: 'SD',
+      res: 'SD'
     },
     {
-      src: '../video/main-video.mp4',
-      type: 'video/mp4',
-      label: 'FHD',
-      res: 'FHD'
-    },
-    {
-      src: '../video/main-video.mp4',
+      src: '../video/HD/main-video.m4v',
       type: 'video/mp4',
       label: 'HD',
       res: 'HD'
+    },
+    {
+      src: '../video/FHD/main-video.m4v',
+      type: 'video/mp4',
+      label: 'FHD',
+      res: 'FHD'
     }
   ])
   player.on('resolutionchange', function () {
@@ -62,22 +62,22 @@ videojs('left_video', {
   var player = this;
   player.updateSrc([
     {
-      src: '../video/left-video.mp4',
+      src: '../video/SD/left-video.m4v',
       type: 'video/mp4',
-      label: '4K',
-      res: '4K'
+      label: 'SD',
+      res: 'SD'
     },
     {
-      src: '../video/left-video.mp4',
-      type: 'video/mp4',
-      label: 'FHD',
-      res: 'FHD'
-    },
-    {
-      src: '../video/left-video.mp4',
+      src: '../video/HD/left-video.m4v',
       type: 'video/mp4',
       label: 'HD',
       res: 'HD'
+    },
+    {
+      src: '../video/FHD/left-video.m4v',
+      type: 'video/mp4',
+      label: 'FHD',
+      res: 'FHD'
     }
   ])
   player.on('resolutionchange', function () {
@@ -102,22 +102,22 @@ videojs('right_video', {
   var player = this;
   player.updateSrc([
     {
-      src: '../video/right-video.m4v',
+      src: '../video/SD/right-video.m4v',
       type: 'video/mp4',
-      label: '4K',
-      res: '4K'
+      label: 'SD',
+      res: 'SD'
     },
     {
-      src: '../video/right-video.m4v',
-      type: 'video/mp4',
-      label: 'FHD',
-      res: 'FHD'
-    },
-    {
-      src: '../video/right-video.m4v',
+      src: '../video/HD/right-video.m4v',
       type: 'video/mp4',
       label: 'HD',
       res: 'HD'
+    },
+    {
+      src: '../video/FHD/right-video.m4v',
+      type: 'video/mp4',
+      label: 'FHD',
+      res: 'FHD'
     }
   ])
   player.on('resolutionchange', function () {

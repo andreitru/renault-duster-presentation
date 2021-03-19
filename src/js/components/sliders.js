@@ -79,7 +79,7 @@ var mySwiper4 = new Swiper(".swiper-container4", {
     disableOnInteraction: false
   },
   pagination: {
-    el: ".swiper-pagination",
+    el: ".gallery-slider__pagination",
     clickable: true,
   },
   navigation: {

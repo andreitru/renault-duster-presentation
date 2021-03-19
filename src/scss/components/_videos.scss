@@ -7,6 +7,10 @@
     margin-bottom: 95px;
     width: 100%;
     max-height: 924px;
+
+    .vjs-poster {
+      height: 99.7%;
+    }
   }
 
   &__subvideo {
@@ -35,6 +39,10 @@
 .left_video-dimensions.vjs-fluid,
 .right_video-dimensions.vjs-fluid {
   padding-top: 26.6%;
+}
+
+.vjs-poster {
+  height: 101%;
 }
 
 //#pokoplayer {

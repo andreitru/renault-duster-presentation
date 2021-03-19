@@ -5,7 +5,7 @@
     margin-top: -2px;
     padding-top: 17px;
     padding-bottom: 410px;
-    background-image: url("../img/background.jpg");
+    background-image: url("../img/background.png");
     background-position: bottom;
     background-size: contain;
     background-repeat: no-repeat;
@@ -31,6 +31,11 @@
 
   &__slider {
     max-width: 1645px;
+
+    .swiper-slide {
+      max-width: 1645px;
+      max-height: 860px;
+    }
   }
 
   &__prev {
@@ -56,16 +61,15 @@
   }
 
   &__pagination {
-    position: relative;
-    margin-top: 67px;
+    position: absolute;
+    left: 50%;
+    bottom: -220px;
+    transform: translateX(-50%);
 
     .swiper-pagination-bullet {
+      margin: 0 14px;
       width: 31px;
       height: 31px;
     }
   }
-}
-
-.swiper-container-horizontal > .gallery-slider__pagination .swiper-pagination-bullet {
-  margin: 0 14px;
 }
