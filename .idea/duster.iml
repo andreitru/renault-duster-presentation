@@ -14,5 +14,7 @@
     <orderEntry type="library" name="videojs-resolution-switcher-vjs7" level="application" />
     <orderEntry type="library" name="photoswipe" level="application" />
     <orderEntry type="library" name="swiper" level="application" />
+    <orderEntry type="library" name="jquery" level="application" />
+    <orderEntry type="library" name="Swiper" level="application" />
   </component>
 </module>

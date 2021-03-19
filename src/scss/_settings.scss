@@ -1,3 +1,27 @@
+@font-face {
+  src: url('../fonts/Montserrat-SemiBold.ttf') format('truetype');
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src: url('../fonts/Montserrat-Bold.ttf') format('truetype');
+  font-family: 'Montserrat';
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src: url('../fonts/Montserrat-Medium.ttf') format('truetype');
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -49,9 +73,9 @@ ul {
 .for-mobile {
   display: none;
 
-  @include mobile {
-    display: block;
-  }
+  //@include mobile {
+  //  display: block;
+  //}
 }
 
 .error {
@@ -67,7 +91,11 @@ ul {
 .container {
   margin: 0 auto;
   padding: 0 45px;
-  max-width: 1735px;
+  max-width: 1340px;
+
+  @include mobile {
+    padding: 0 25px;
+  }
 }
 
 .js-focus-visible :focus:not(.focus-visible) {

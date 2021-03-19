@@ -3,14 +3,13 @@
 
   &__container {
     padding-top: 28px;
-    padding-bottom: 50px;
+    padding-bottom: 0;
   }
 
   &__title {
     margin: 0;
     font-weight: 600;
-    font-size: 40px;
-    letter-spacing: 1px;
+    font-size: 34px;
     text-align: center;
     text-transform: uppercase;
     color: var(--color-black);
@@ -20,7 +19,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    margin: 54px auto 0;
+    margin: 72px auto 0;
   }
 
   &__slider {
@@ -30,18 +29,17 @@
 
 .slider {
   &__list {
-    margin-top: 27px;
-    padding-left: 10px;
+    margin-top: 24px;
+    padding-left: 15px;
   }
 
   &__item {
-    margin-bottom: 55px;
-    padding: 5px 0 5px 66px;
+    margin-bottom: 25px;
+    padding: 5px 0 5px 55px;
+    min-height: 90px;
     font-weight: 500;
-    font-size: 26px;
-    line-height: 32px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    font-size: 20px;
+    line-height: 24px;
     color: var(--color-white);
     background: url("../img/check.svg") no-repeat left top;
   }
@@ -51,14 +49,19 @@
     margin-top: 30px;
 
     .swiper-pagination-bullet {
-      width: 20px;
-      height: 20px;
+      width: 15px;
+      height: 15px;
+      opacity: 0.5;
+    }
+
+    .swiper-pagination-bullet-active {
+      opacity: 1;
     }
   }
 }
 
 .swiper-container-horizontal > .slider__pagination .swiper-pagination-bullet {
-  margin: 0 9.5px;
+  margin: 0 7px;
 }
 
 .swiper-button-next {

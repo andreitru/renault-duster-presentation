@@ -4,7 +4,7 @@
   &__container {
     margin-top: -2px;
     padding-top: 17px;
-    padding-bottom: 410px;
+    padding-bottom: 519px;
     background-image: url("../img/background.png");
     background-position: bottom;
     background-size: contain;
@@ -12,10 +12,9 @@
   }
 
   &__title {
-    margin: 0 0 36px;
+    margin: 0 0 75px;
     font-weight: 600;
-    font-size: 50px;
-    letter-spacing: 1.1px;
+    font-size: 36px;
     text-align: center;
     text-transform: uppercase;
     color: var(--color-white);
@@ -27,14 +26,14 @@
   margin: 0 auto;
   padding-right: 60px;
   padding-left: 60px;
-  max-width: 1825px;
+  max-width: 1410px;
 
   &__slider {
-    max-width: 1645px;
+    max-width: 1250px;
 
     .swiper-slide {
-      max-width: 1645px;
-      max-height: 860px;
+      max-width: 1250px;
+      max-height: 652px;
     }
   }
 

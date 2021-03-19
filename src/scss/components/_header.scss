@@ -1,25 +1,28 @@
 .header {
   &__container {
     position: relative;
-    padding-top: 243px;
-    padding-bottom: 44px;
-    background: url("../img/logo.png") no-repeat center 78px;
+    padding-top: 225px;
+    padding-bottom: 77px;
+    background: url("../img/logo.png") no-repeat center 36px;
   }
 
   &__title {
     margin: 0;
     font-weight: 600;
-    font-size: 40px;
-    letter-spacing: 1px;
+    font-size: 34px;
     text-align: center;
     text-transform: uppercase;
     color: var(--color-black);
+
+    @include mobile {
+      font-size: 28px;
+    }
   }
 
   &__list {
     position: absolute;
-    right: 30px;
-    top: 45px;
+    right: 32px;
+    top: 42px;
   }
 }
 
@@ -29,7 +32,7 @@
   justify-content: center;
 
   &__link {
-    font-size: 26px;
+    font-size: 20px;
     text-transform: uppercase;
 
     &--active {
