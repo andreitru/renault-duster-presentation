@@ -4,7 +4,7 @@
   &__container {
     margin-top: -2px;
     padding-top: 17px;
-    padding-bottom: 519px;
+    padding-bottom: 24vw;
     background-image: url("../img/background.png");
     background-position: bottom;
     background-size: contain;
@@ -12,12 +12,21 @@
   }
 
   &__title {
-    margin: 0 0 75px;
+    margin: 0 0 60px;
     font-weight: 600;
-    font-size: 36px;
+    font-size: 30px;
     text-align: center;
     text-transform: uppercase;
     color: var(--color-white);
+
+    @include mobile {
+      margin-bottom: 18px;
+      font-size: 24px;
+    }
+
+    @include xs {
+      font-size: 20px;
+    }
   }
 }
 
@@ -26,14 +35,13 @@
   margin: 0 auto;
   padding-right: 60px;
   padding-left: 60px;
-  max-width: 1410px;
+  max-width: 1260px;
 
   &__slider {
-    max-width: 1250px;
+    max-width: 1100px;
 
     .swiper-slide {
-      max-width: 1250px;
-      max-height: 652px;
+      max-width: 1100px;
     }
   }
 
@@ -46,6 +54,12 @@
     background: url("../img/arrow.svg") no-repeat center;
     transform: translateY(-50%);
     cursor: pointer;
+
+    @include mobile {
+      width: 20px;
+      height: 20px;
+      background-size: 12px;
+    }
   }
 
   &__next {
@@ -57,6 +71,12 @@
     background: url("../img/arrow.svg") no-repeat center;
     transform: translateY(-50%) rotate(180deg);
     cursor: pointer;
+
+    @include mobile {
+      width: 20px;
+      height: 20px;
+      background-size: 12px;
+    }
   }
 
   &__pagination {
@@ -70,5 +90,10 @@
       width: 31px;
       height: 31px;
     }
+  }
+
+  @include mobile {
+    padding-right: 30px;
+    padding-left: 30px;
   }
 }

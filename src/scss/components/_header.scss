@@ -1,28 +1,51 @@
 .header {
   &__container {
     position: relative;
-    padding-top: 225px;
+    padding-top: 175px;
     padding-bottom: 77px;
     background: url("../img/logo.png") no-repeat center 36px;
+    background-size: 70px 91px;
+
+    @include mobile {
+      padding-top: 142px;
+      padding-bottom: 37px;
+      background-position: center 52px;
+      background-size: 60px 78px;
+    }
+
+    @include xs {
+      background-size: 50px 68px;
+    }
   }
 
   &__title {
     margin: 0;
     font-weight: 600;
-    font-size: 34px;
+    font-size: 28px;
     text-align: center;
     text-transform: uppercase;
     color: var(--color-black);
 
     @include mobile {
-      font-size: 28px;
+      font-size: 26px;
+      line-height: 32px;
+    }
+
+    @include xs {
+      font-size: 20px;
+      line-height: 30px;
     }
   }
 
   &__list {
     position: absolute;
     right: 32px;
-    top: 42px;
+    top: 30px;
+
+    @include mobile {
+      right: 13px;
+      top: 20px;
+    }
   }
 }
 
@@ -32,7 +55,7 @@
   justify-content: center;
 
   &__link {
-    font-size: 20px;
+    font-size: 12px;
     text-transform: uppercase;
 
     &--active {

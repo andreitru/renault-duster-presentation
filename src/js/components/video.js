@@ -1,15 +1,7 @@
-// var vid = document.getElementById('video');
-// var player = videojs(vid);
-
-// videojs('video').videoJsResolutionSwitcher()
-
 videojs('main_video', {
   "controls": true,
   "autoplay": false,
-  "preload": "metadata",
-  // "responsive": true,
-  // "width" : "100%",
-  // "height" : "auto",
+  "preload": "none",
   "poster": "../img/main-video-poster.jpg",
   plugins: {
     videoJsResolutionSwitcher: {
@@ -19,9 +11,12 @@ videojs('main_video', {
   }
 }, function () {
   var player = this;
+  player.on('play', function () {
+    ym(74310484, 'reachGoal', 'video1')
+    return true
+  })
   player.updateSrc([
     {
-      // src: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
       src: '../video/SD/main-video.m4v',
       type: 'video/mp4',
       label: 'SD',
@@ -48,9 +43,9 @@ videojs('main_video', {
 videojs('left_video', {
   "controls": true,
   "autoplay": false,
-  "preload": "metadata",
-  // "width" : "100%",
-  // "height" : "auto",
+  "preload": "none",
+  "width": "100%",
+  "height": "auto",
   "poster": "../img/left-video-poster.jpg",
   plugins: {
     videoJsResolutionSwitcher: {
@@ -60,6 +55,10 @@ videojs('left_video', {
   }
 }, function () {
   var player = this;
+  player.on('play', function () {
+    ym(74310484, 'reachGoal', 'video2')
+    return true
+  })
   player.updateSrc([
     {
       src: '../video/SD/left-video.m4v',
@@ -88,9 +87,9 @@ videojs('left_video', {
 videojs('right_video', {
   "controls": true,
   "autoplay": false,
-  "preload": "metadata",
-  // "width" : "100%",
-  // "height" : "auto",
+  "preload": "none",
+  "width": "100%",
+  "height": "auto",
   "poster": "../img/right-video-poster.jpg",
   plugins: {
     videoJsResolutionSwitcher: {
@@ -100,6 +99,10 @@ videojs('right_video', {
   }
 }, function () {
   var player = this;
+  player.on('play', function () {
+    ym(74310484, 'reachGoal', 'video3')
+    return true
+  })
   player.updateSrc([
     {
       src: '../video/SD/right-video.m4v',
@@ -124,7 +127,6 @@ videojs('right_video', {
     player.play()
   })
 });
-
 
 var medias = Array.prototype.slice.apply(document.querySelectorAll('audio,video'));
 medias.forEach(function (media) {

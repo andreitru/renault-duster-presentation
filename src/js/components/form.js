@@ -1,23 +1,10 @@
-const firebaseConfig = {
-  apiKey: "AIzaSyAWjhrOA-GS6LPx8luMcE8KCbH7aYCr4oY",
-  authDomain: "broadcast-1701e.firebaseapp.com",
-  databaseURL: "https://broadcast-1701e-default-rtdb.europe-west1.firebasedatabase.app/",
-  projectId: "broadcast-1701e",
-  storageBucket: "broadcast-1701e.appspot.com",
-  messagingSenderId: "844755586030",
-  appId: "1:844755586030:web:c41bc1585f41cf20549cff"
-};
-
-firebase.initializeApp(firebaseConfig);
-
 const database = firebase.database();
 const generateRandomString = () => Math.random().toString(36).substring(2, 15);
 const form = document.querySelector('.form');
 const formSection = document.querySelector('.form-section');
 const inputName = document.querySelector('input[name="name"]');
 const inputEmail = document.querySelector('input[name="email"]');
-// const checkbox = document.querySelector('input[name="checkbox"]');
-// const formButton = document.querySelector('.form__button');
+
 const id = getId();
 
 function getId() {
@@ -44,19 +31,12 @@ function reEnter() {
   function writeUser(id, time) {
     let date = new Date().toString();
     const updates = {};
-    updates['users/' + id + '/' + '/timeReEnterMs'] = time;
-    updates['users/' + id + '/' + '/timeReEnterDate'] = date;
+    updates['users/' + id + '/' + '/reEnterMs'] = time;
+    updates['users/' + id + '/' + '/reEnterDate'] = date;
     firebase.database().ref().update(updates, (error) => {
       if (error) {
         console.log(error)
       } else {
-        // inputName.value = ''
-        // inputMiddleName.value = ''
-        // inputSurname.value = ''
-        // inputCompany.value = ''
-        // inputEmail.value = ''
-        // video.classList.add('show');
-        // reEnterBtn.classList.remove('show');
       }
     })
   }
@@ -67,11 +47,12 @@ function reEnter() {
 function submitForm(e) {
   e.preventDefault();
   document.body.classList.remove('overflow');
+  window.scrollTo(pageXOffset, 0);
 
   const newUser = {
     id: id,
-    timeStartMs: Date.now(),
-    timeStartDate: new Date().toString(),
+    loginMs: Date.now(),
+    loginDate: new Date().toString(),
     name: inputName.value,
     email: inputEmail.value,
   }
@@ -102,35 +83,21 @@ firebase.auth().signInAnonymously()
     console.log(errorCode, errorMessage)
   });
 
-function updateTime(id, time) {
+function closeTime(id, time) {
   let date = new Date().toString();
   const updates = {};
-  updates['users/' + id + '/' + '/timeEndMs'] = time;
-  updates['users/' + id + '/' + '/timeEndDate'] = date;
+  updates['users/' + id + '/' + '/closeMs'] = time;
+  updates['users/' + id + '/' + '/closeDate'] = date;
   return firebase.database().ref().update(updates)
 }
 
-// let time = setInterval(() => updateTime(id, Date.now()), 10000)
-window.addEventListener('unload', function () {
-  updateTime(id, Date.now())
-})
-
-// window.addEventListener('blur', function () {
-//   // clearInterval(time)
-//   updateTime(id, Date.now())
-//
-// })
-//
-// window.addEventListener('focus', function () {
-//    if (!document.hidden) reEnter()
-//   // let newDate = setInterval(() => updateTime(id, Date.now()), 10000)
-// })
-
-// document.querySelector('.form__button').addEventListener('click', function (e) {
-//   e.preventDefault();
-//   document.querySelector('.form-section').style.display = 'none';
-// })
-
+function hideTime(id, time) {
+  let date = new Date().toString();
+  const updates = {};
+  updates['users/' + id + '/' + '/hideMs'] = time;
+  updates['users/' + id + '/' + '/hideDate'] = date;
+  return firebase.database().ref().update(updates)
+}
 
 // Set the name of the hidden property and the change event for visibility
 let hidden, visibilityChange;
@@ -146,10 +113,9 @@ if (typeof document.hidden !== "undefined") { // Opera 12.10 and Firefox 18 and 
 }
 
 
-
 function handleVisibilityChange() {
   if (document[hidden]) {
-    updateTime(id, Date.now())
+    closeTime(id, Date.now())
   } else {
     reEnter()
   }

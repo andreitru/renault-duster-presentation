@@ -12,7 +12,7 @@
       background-color: var(--color-white);
 
       &::before {
-        content: "RENAULT DUSTER";
+        content: "RENAULT DUSTER ";
         position: absolute;
         right: 50%;
         bottom: 9%;
@@ -31,17 +31,16 @@
 
         @include mobile {
           font-size: 16px;
-          line-height: 19.5px;
         }
       }
 
       &::after {
-        content: "Сравнение нового и старого";
+        content: "New vs. Old";
         position: absolute;
         right: 50%;
         bottom: 18%;
-        padding-right: 10px;
-        padding-left: 10px;
+        padding-right: 20px;
+        padding-left: 20px;
         width: 100%;
         font-weight: 400;
         font-size: 36px;
@@ -95,6 +94,7 @@
 
     @include mobile {
       width: 100%;
+
     }
   }
 
@@ -115,7 +115,7 @@
 #left_video {
   .vjs-poster {
     &::before {
-      content: "RENAULT DUSTER";
+      content: "video commercial";
       position: absolute;
       right: 50%;
       bottom: 1%;
@@ -141,12 +141,12 @@
     }
 
     &::after {
-      content: "Рекламный ролик нового";
+      content: "The New RENAULT DUSTER";
       position: absolute;
       right: 50%;
       bottom: 10%;
-      padding-right: 10px;
-      padding-left: 10px;
+      padding-right: 30px;
+      padding-left: 30px;
       width: 100%;
       min-height: 50px;
       font-weight: 400;
@@ -161,6 +161,8 @@
       }
 
       @include mobile {
+        padding-right: 10px;
+        padding-left: 10px;
         font-size: 16px;
         line-height: 19.5px;
       }
@@ -171,7 +173,7 @@
 #right_video {
   .vjs-poster {
     &::before {
-      content: "RENAULT DUSTER";
+      content: "“Big Test Drive”";
       position: absolute;
       right: 50%;
       bottom: 1%;
@@ -197,12 +199,12 @@
     }
 
     &::after {
-      content: "Большой тест драйв нового";
+      content: "The New RENAULT DUSTER";
       position: absolute;
       right: 50%;
       bottom: 10%;
-      padding-right: 10px;
-      padding-left: 10px;
+      padding-right: 30px;
+      padding-left: 30px;
       width: 100%;
       min-height: 50px;
       font-weight: 400;
@@ -217,6 +219,8 @@
       }
 
       @include mobile {
+        padding-right: 10px;
+        padding-left: 10px;
         font-size: 16px;
         line-height: 19.5px;
       }
@@ -276,8 +280,4 @@ video:focus {
 
 .video-js .vjs-big-play-button {
   opacity: 0;
-}
-
-.video-js {
-  background-color: var(--color-white) !important;
 }

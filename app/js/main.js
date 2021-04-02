@@ -16,8 +16,7 @@ const form = document.querySelector('.form');
 const formSection = document.querySelector('.form-section');
 const inputName = document.querySelector('input[name="name"]');
 const inputEmail = document.querySelector('input[name="email"]');
-// const checkbox = document.querySelector('input[name="checkbox"]');
-// const formButton = document.querySelector('.form__button');
+
 const id = getId();
 
 function getId() {
@@ -44,19 +43,12 @@ function reEnter() {
   function writeUser(id, time) {
     let date = new Date().toString();
     const updates = {};
-    updates['users/' + id + '/' + '/timeReEnterMs'] = time;
-    updates['users/' + id + '/' + '/timeReEnterDate'] = date;
+    updates['users/' + id + '/' + '/reEnterMs'] = time;
+    updates['users/' + id + '/' + '/reEnterDate'] = date;
     firebase.database().ref().update(updates, (error) => {
       if (error) {
         console.log(error)
       } else {
-        // inputName.value = ''
-        // inputMiddleName.value = ''
-        // inputSurname.value = ''
-        // inputCompany.value = ''
-        // inputEmail.value = ''
-        // video.classList.add('show');
-        // reEnterBtn.classList.remove('show');
       }
     })
   }
@@ -67,11 +59,12 @@ function reEnter() {
 function submitForm(e) {
   e.preventDefault();
   document.body.classList.remove('overflow');
+  window.scrollTo(pageXOffset, 0);
 
   const newUser = {
     id: id,
-    timeStartMs: Date.now(),
-    timeStartDate: new Date().toString(),
+    loginMs: Date.now(),
+    loginDate: new Date().toString(),
     name: inputName.value,
     email: inputEmail.value,
   }
@@ -102,33 +95,24 @@ firebase.auth().signInAnonymously()
     console.log(errorCode, errorMessage)
   });
 
-function updateTime(id, time) {
+function closeTime(id, time) {
   let date = new Date().toString();
   const updates = {};
-  updates['users/' + id + '/' + '/timeEndMs'] = time;
-  updates['users/' + id + '/' + '/timeEndDate'] = date;
+  updates['users/' + id + '/' + '/closeMs'] = time;
+  updates['users/' + id + '/' + '/closeDate'] = date;
   return firebase.database().ref().update(updates)
 }
 
-// let time = setInterval(() => updateTime(id, Date.now()), 10000)
-window.addEventListener('unload', function () {
-  updateTime(id, Date.now())
-})
+function hideTime(id, time) {
+  let date = new Date().toString();
+  const updates = {};
+  updates['users/' + id + '/' + '/hideMs'] = time;
+  updates['users/' + id + '/' + '/hideDate'] = date;
+  return firebase.database().ref().update(updates)
+}
 
-// window.addEventListener('blur', function () {
-//   // clearInterval(time)
-//   updateTime(id, Date.now())
-//
-// })
-//
-// window.addEventListener('focus', function () {
-//    if (!document.hidden) reEnter()
-//   // let newDate = setInterval(() => updateTime(id, Date.now()), 10000)
-// })
-
-// document.querySelector('.form__button').addEventListener('click', function (e) {
-//   e.preventDefault();
-//   document.querySelector('.form-section').style.display = 'none';
+// window.addEventListener('unload', function () {
+//   closeTime(id, Date.now())
 // })
 
 
@@ -146,10 +130,9 @@ if (typeof document.hidden !== "undefined") { // Opera 12.10 and Firefox 18 and 
 }
 
 
-
 function handleVisibilityChange() {
   if (document[hidden]) {
-    updateTime(id, Date.now())
+    closeTime(id, Date.now())
   } else {
     reEnter()
   }
@@ -1092,15 +1075,11 @@ initPhotoSwipeFromDOM(".my-gallery");
 // initPhotoSwipeFromDOM(".my-gallery3");
 // initPhotoSwipeFromDOM(".my-gallery4");
 
-// var vid = document.getElementById('video');
-// var player = videojs(vid);
-
-// videojs('video').videoJsResolutionSwitcher()
 
 videojs('main_video', {
   "controls": true,
   "autoplay": false,
-  "preload": "metadata",
+  "preload": "none",
   // "responsive": true,
   // "width" : "100%",
   // "height" : "auto",
@@ -1113,6 +1092,10 @@ videojs('main_video', {
   }
 }, function () {
   var player = this;
+  player.on('play', function () {
+    ym(74310484,'reachGoal','video1')
+    return true
+  })
   player.updateSrc([
     {
       // src: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
@@ -1142,9 +1125,9 @@ videojs('main_video', {
 videojs('left_video', {
   "controls": true,
   "autoplay": false,
-  "preload": "metadata",
-  // "width" : "100%",
-  // "height" : "auto",
+  "preload": "none",
+  "width": "100%",
+  "height": "auto",
   "poster": "../img/left-video-poster.jpg",
   plugins: {
     videoJsResolutionSwitcher: {
@@ -1154,6 +1137,10 @@ videojs('left_video', {
   }
 }, function () {
   var player = this;
+  player.on('play', function () {
+    ym(74310484,'reachGoal','video2')
+    return true
+  })
   player.updateSrc([
     {
       src: '../video/SD/left-video.m4v',
@@ -1182,9 +1169,9 @@ videojs('left_video', {
 videojs('right_video', {
   "controls": true,
   "autoplay": false,
-  "preload": "metadata",
-  // "width" : "100%",
-  // "height" : "auto",
+  "preload": "none",
+  "width": "100%",
+  "height": "auto",
   "poster": "../img/right-video-poster.jpg",
   plugins: {
     videoJsResolutionSwitcher: {
@@ -1194,6 +1181,10 @@ videojs('right_video', {
   }
 }, function () {
   var player = this;
+  player.on('play', function () {
+    ym(74310484,'reachGoal','video3')
+    return true
+  })
   player.updateSrc([
     {
       src: '../video/SD/right-video.m4v',

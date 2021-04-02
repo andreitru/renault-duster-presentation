@@ -72,10 +72,6 @@ ul {
 
 .for-mobile {
   display: none;
-
-  //@include mobile {
-  //  display: block;
-  //}
 }
 
 .error {
@@ -91,7 +87,7 @@ ul {
 .container {
   margin: 0 auto;
   padding: 0 45px;
-  max-width: 1340px;
+  max-width: 1190px;
 
   @include mobile {
     padding: 0 25px;
@@ -100,4 +96,8 @@ ul {
 
 .js-focus-visible :focus:not(.focus-visible) {
   outline: none;
+}
+
+.renault {
+  white-space: nowrap;
 }

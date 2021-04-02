@@ -77,12 +77,15 @@ ul {
 .container {
   margin: 0 auto;
   padding: 0 45px;
-  max-width: 1340px; }
+  max-width: 1190px; }
   @media (max-width: 768px) {
     .container {
       padding: 0 25px; } }
 
 .js-focus-visible :focus:not(.focus-visible) {
   outline: none; }
+
+.renault {
+  white-space: nowrap; }
 
 /*# sourceMappingURL=global.css.map */
