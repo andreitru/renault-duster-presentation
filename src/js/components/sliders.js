@@ -21,6 +21,11 @@ var mySwiper1 = new Swiper(".swiper-container1", {
   }
 });
 
+mySwiper1.on('click', function() {
+  ym(74310484,'reachGoal','Картинка 1')
+  return true
+})
+
 var mySwiper2 = new Swiper(".swiper-container2", {
   loop: false,
   slidesPerView: 1,
@@ -43,6 +48,11 @@ var mySwiper2 = new Swiper(".swiper-container2", {
     enabled: true,
   }
 });
+
+mySwiper2.on('click', function() {
+  ym(74310484,'reachGoal','Картинка 2')
+  return true
+})
 
 var mySwiper3 = new Swiper(".swiper-container3", {
   loop: false,
@@ -67,6 +77,11 @@ var mySwiper3 = new Swiper(".swiper-container3", {
   }
 });
 
+mySwiper3.on('click', function() {
+  ym(74310484,'reachGoal','Картинка 3')
+  return true
+})
+
 var mySwiper4 = new Swiper(".swiper-container4", {
   loop: false,
   slidesPerView: 1,
@@ -85,6 +100,11 @@ var mySwiper4 = new Swiper(".swiper-container4", {
     enabled: true,
   }
 });
+
+mySwiper4.on('click', function() {
+  ym(74310484,'reachGoal','Галерея')
+  return true
+})
 
 var initPhotoSwipeFromDOM = function (gallerySelector) {
   var parseThumbnailElements = function (el) {
